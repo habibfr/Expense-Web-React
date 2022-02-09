@@ -1,6 +1,7 @@
+import React from "react";
 import ExpenseItem from "./ExpenseItem";
 import ExpensesData from "./ExpenseData";
-import Card from "./Card";
+import Card from "../UI/Card";
 import "./Expenses.css";
 
 function Expenses() {
