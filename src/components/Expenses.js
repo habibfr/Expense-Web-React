@@ -1,22 +1,21 @@
 import ExpenseItem from "./ExpenseItem";
 import ExpensesData from "./ExpenseData";
+import Card from "./Card";
 import "./Expenses.css";
 
 function Expenses() {
   const data = ExpensesData.map((data) => {
     return (
-      <div>
-        <ExpenseItem
-          key={data.id}
-          title={data.title}
-          amount={data.amount}
-          date={data.date}
-        />
-      </div>
+      <ExpenseItem
+        key={data.id}
+        title={data.title}
+        amount={data.amount}
+        date={data.date}
+      />
     );
   });
 
-  return <div className="expenses">{data}</div>;
+  return <Card className="expenses">{data}</Card>;
 }
 
 export default Expenses;
