@@ -1,20 +1,23 @@
 import React from "react";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/newExpense";
 
 function App() {
-  return React.createElement(
-    "div",
-    {},
-    React.createElement("h2", {}, "Let's get started!"),
-    React.createElement(Expenses, {})
-  );
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement("h2", {}, "Let's get started!"),
+  //   React.createElement(Expenses, {})
+  // );
 
-  // <div>
-  //   <h2>Let's get started!</h2>
-  //   <Expenses />
-  //   {/* {data} */}
+  return (
+    <div>
+      <NewExpense />
+      <Expenses />
 
-  //   {/* <ExpenseItem
+      {/* {data} */}
+
+      {/* //   <ExpenseItem
   //     title={ExpensesData[1].title}
   //     amount={ExpensesData[1].amount}
   //     date={ExpensesData[1].date}
@@ -29,7 +32,8 @@ function App() {
   //     amount={ExpensesData[3].amount}
   //     date={ExpensesData[3].date}
   //   /> */}
-  // </div>
+    </div>
+  );
 }
 
 export default App;
