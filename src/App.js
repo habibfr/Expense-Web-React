@@ -4,8 +4,10 @@ import NewExpense from "./components/NewExpense/newExpense";
 import ExpensesData from "./components/Expenses/ExpenseData";
 
 function App() {
-  const [expenses, setExpenses] = useState(ExpensesData);
+  // set data expenses state
+  const [expensesData, setExpenses] = useState(ExpensesData);
 
+  // add new expense
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
@@ -15,7 +17,7 @@ function App() {
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+      <Expenses items={expensesData} />
     </div>
   );
 }

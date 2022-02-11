@@ -10,9 +10,9 @@ function NewExpense(props) {
 
   return (
     <div className="new-expense">
-      <button className="alternative">
+      <div className="alternative">
         <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
-      </button>
+      </div>
     </div>
   );
 }
