@@ -35,4 +35,5 @@
 .new-expense .alternative:hover,
 .new-expense .alternative:active {
   background-color: #ddb3f8;
+  border-radius: 12px;
 }
