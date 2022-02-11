@@ -1,42 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/newExpense";
+import ExpensesData from "./components/Expenses/ExpenseData";
 
 function App() {
-  // return React.createElement(
-  //   "div",
-  //   {},
-  //   React.createElement("h2", {}, "Let's get started!"),
-  //   React.createElement(Expenses, {})
-  // );
+  const [expenses, setExpenses] = useState(ExpensesData);
 
   const addExpenseHandler = (expense) => {
-    console.log("in App.js");
-    console.log(expense);
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    });
   };
 
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses />
-
-      {/* {data} */}
-
-      {/* //   <ExpenseItem
-  //     title={ExpensesData[1].title}
-  //     amount={ExpensesData[1].amount}
-  //     date={ExpensesData[1].date}
-  //   />
-  //   <ExpenseItem
-  //     title={ExpensesData[2].title}
-  //     amount={ExpensesData[2].amount}
-  //     date={ExpensesData[2].date}
-  //   />
-  //   <ExpenseItem
-  //     title={ExpensesData[3].title}
-  //     amount={ExpensesData[3].amount}
-  //     date={ExpensesData[3].date}
-  //   /> */}
+      <Expenses items={expenses} />
     </div>
   );
 }
